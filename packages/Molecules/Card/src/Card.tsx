@@ -1,5 +1,4 @@
 import { El } from '@numl-react/core';
-button.tsx;
 import React from 'react';
 
 function Card(allProps: any): JSX.Element {
