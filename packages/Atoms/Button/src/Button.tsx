@@ -51,9 +51,7 @@ function Button(props: any): JSX.Element {
       {isExist(menu) && typeof menu === 'object' ? (
         <>
           {dropdownIcon ? <El.DropdownIcon theme={theme} /> : null}
-          <Button.Popup width={'max-content'} use-menu>
-            {menu}
-          </Button.Popup>
+          <Button.Popup width={'max-content'}>{menu}</Button.Popup>
         </>
       ) : null}
     </El.Button>
@@ -114,9 +112,9 @@ Button.Icon = function ButtonIcon(props: any) {
 };
 
 Button.Popup = function ButtonDropDownPopup(props: any) {
-  const { children, fill = 'bg', color = 'text', ...otherProps } = props;
+  const { children, ...otherProps } = props;
   return (
-    <El.Popup use-menu fill={fill} color={color} block {...otherProps}>
+    <El.Popup nu-btnpopup place="outside-bottom right" {...otherProps}>
       {children}
     </El.Popup>
   );
