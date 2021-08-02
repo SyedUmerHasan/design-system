@@ -21,17 +21,13 @@ function TextInput(allProps: any): JSX.Element {
   return (
     <El.Flex flow="column" width={width}>
       {label ? (
-        <El.Flex content="space-between">
-          <El.Label for={name}>
+        <El.Description flex content="space-between">
+          <El.Label for={name} gap={'2x'}>
             {label}
-            {required ? (
-              <El.Inline theme="danger" padding="0 1x">
-                *
-              </El.Inline>
-            ) : null}
+            {required ? <El.Inline theme="danger">*</El.Inline> : null}
           </El.Label>
           {link ? <El.Link to={link.to}>{link.text}</El.Link> : link}
-        </El.Flex>
+        </El.Description>
       ) : null}
       <El.InputGroup height={otherProps.height || undefined}>
         {icon &&
@@ -59,7 +55,7 @@ function TextInput(allProps: any): JSX.Element {
       </El.InputGroup>
       {helpText ? (
         <El.Flex content="space-between">
-          <El.Label size="sm">{helpText}</El.Label>
+          <El.Label size="xs">{helpText}</El.Label>
           <El.Button
             clear
             padding="0 0.5x"
@@ -110,7 +106,7 @@ const Field = (props: any) => {
     <El.InputGroup block flow="row" fill="input">
       <El.Grid gap columns="1fr" width="100%" padding="1x 2x">
         {label ? (
-          <El.Label size="1.5x 2x">
+          <El.Label size="sm">
             {label}
             {required ? (
               <El.BaseElement padding="0 1x" theme="danger">

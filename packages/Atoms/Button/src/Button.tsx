@@ -48,15 +48,10 @@ function Button(props: any): JSX.Element {
         icon
       )}
       {children}
-      {isExist(menu) &&
-      (typeof menu === 'object' || typeof menu === 'string') ? (
+      {isExist(menu) && typeof menu === 'object' ? (
         <>
-          {dropdownIcon && (dropdownIcon == true || dropdownIcon === true) ? (
-            <El.DropdownIcon theme={theme} />
-          ) : null}
-          <Button.Popup use-menu size={size} theme={theme}>
-            {menu}
-          </Button.Popup>
+          {dropdownIcon ? <El.DropdownIcon theme={theme} /> : null}
+          <Button.Popup width={'max-content'}>{menu}</Button.Popup>
         </>
       ) : null}
     </El.Button>
@@ -64,59 +59,39 @@ function Button(props: any): JSX.Element {
 }
 
 Button.Small = (props: any) => {
-  const {
-    children = null,
-    size = 'sm',
-    padding = '0.75x 2x',
-    ...otherProps
-  } = props;
+  const { children = null, ...otherProps } = props;
 
   return (
-    <Button padding={padding} size={size} {...otherProps}>
+    <Button padding={'0.75x 2x'} size={'sm'} {...otherProps}>
       {children}
     </Button>
   );
 };
 
 Button.Medium = (props: any) => {
-  const {
-    children = null,
-    size = 'md',
-    padding = '1.5x 2.5x',
-    ...otherProps
-  } = props;
+  const { children = null, ...otherProps } = props;
 
   return (
-    <Button padding={padding} size={size} {...otherProps}>
+    <Button padding={'1.5x 2.5x'} size={'md'} {...otherProps}>
       {children}
     </Button>
   );
 };
 
 Button.Large = (props: any) => {
-  const {
-    children = null,
-    size = 'lg',
-    padding = '2x 3x',
-    ...otherProps
-  } = props;
+  const { children = null, ...otherProps } = props;
 
   return (
-    <Button padding={padding} size={size} {...otherProps}>
+    <Button padding={'2x 3x'} size={'lg'} {...otherProps}>
       {children}
     </Button>
   );
 };
 Button.ExtraLarge = (props: any) => {
-  const {
-    children = null,
-    size = 'xl',
-    padding = '2x 4x',
-    ...otherProps
-  } = props;
+  const { children = null, ...otherProps } = props;
 
   return (
-    <Button padding={padding} size={size} {...otherProps}>
+    <Button padding={'2x 4x'} size={'xl'} {...otherProps}>
       {children}
     </Button>
   );
@@ -137,9 +112,9 @@ Button.Icon = function ButtonIcon(props: any) {
 };
 
 Button.Popup = function ButtonDropDownPopup(props: any) {
-  const { children, fill = 'bg', color = 'text', ...otherProps } = props;
+  const { children, ...otherProps } = props;
   return (
-    <El.Popup use-menu fill={fill} color={color} block {...otherProps}>
+    <El.Popup nu-btnpopup place="outside-bottom right" {...otherProps}>
       {children}
     </El.Popup>
   );
