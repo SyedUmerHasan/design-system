@@ -1,5 +1,14 @@
 # @numl-react/menu
 
+## 0.0.37
+
+### Patch Changes
+
+- [#122](https://github.com/numldesign/numl-react/pull/122) [`ecaa841`](https://github.com/numldesign/numl-react/commit/ecaa8417e5728d9bd3041d0aa5ccbf2abab9768c) Thanks [@SyedUmerHasan](https://github.com/SyedUmerHasan)! - minor Ui refactorings and columsn utility changes
+
+- Updated dependencies [[`ecaa841`](https://github.com/numldesign/numl-react/commit/ecaa8417e5728d9bd3041d0aa5ccbf2abab9768c)]:
+  - @numl-react/core@0.0.37
+
 ## 0.0.36
 
 ### Patch Changes
